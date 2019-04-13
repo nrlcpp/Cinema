@@ -19,8 +19,8 @@ public class ReservationService {
     }
 
 
-    public void remove(String id) {
-        reservationRepository.remove(id);
+    public static void remove(String id) {
+        ReservationRepository.remove(id);
     }
 
     public List<Reservation> getAll() {

@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class ReservationRepository {
 
-    private Map<String, Reservation> storage = new HashMap<>();
+    private static Map<String, Reservation> storage = new HashMap<>();
     private ReservationValidator validator;
 
     public ReservationRepository(ReservationValidator validator) { this.validator = validator; }
@@ -46,7 +46,7 @@ public class ReservationRepository {
      * @param id the id.
      * @throws RuntimeException if there is no transaction with the given id.
      */
-    public void remove(String id) {
+    public static void remove(String id) {
         if (!storage.containsKey(id)) {
             throw new RuntimeException("There is no reservation with the given id to remove.");
         }
