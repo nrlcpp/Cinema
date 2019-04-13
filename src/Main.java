@@ -9,6 +9,7 @@ import Service.FilmService;
 import Service.ReservationService;
 
 import UI.Console;
+import UI.NewConsole;
 
 public class Main {
 
@@ -26,7 +27,10 @@ public class Main {
         ClientService clientService = new ClientService(clientRepository);
         ReservationService reservationService = new ReservationService(reservationRepository);
 
-        Console console = new Console(filmService, clientService, reservationService);
-        console.run();
+       // Console console = new Console(filmService, clientService, reservationService);
+       // console.run();
+
+             NewConsole console = new NewConsole( filmService, clientService,reservationService);
+      console.runMenu();
     }
 }

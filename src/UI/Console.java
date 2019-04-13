@@ -256,7 +256,7 @@ public class Console {
             System.out.print("Enter in program (true / false): ");
             boolean inProgram = Boolean.parseBoolean(scanner.nextLine());
 
-            filmService.addOrUpdate(id, name, Integer.parseInt(yearOfAparition), price, inProgram);
+            filmService.upsert(id, name, Integer.parseInt(yearOfAparition), price, inProgram);
 
             System.out.println("Film added!");
         } catch (Exception ex) {
